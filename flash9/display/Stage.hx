@@ -16,8 +16,8 @@ extern class Stage extends DisplayObjectContainer {
 
 	var displayState : StageDisplayState;
 	
-	#if air
+	//#if air
 	public var nativeWindow(default, null): NativeWindow;
 	public function assignFocus(objectToFocus: InteractiveObject, direction: String): Void;
-	#end
+	//#end
 }

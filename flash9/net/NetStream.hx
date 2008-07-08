@@ -53,8 +53,8 @@ extern class NetStream extends flash.events.EventDispatcher {
 	private static var kSetBufferTime : UInt;
 	private static var kSetTotalFrames : UInt;
 	private static var kSetVideoCodecID : UInt;
-	#if air
+	//#if air
 	public static function resetDRMVouchers(): Void;
 	public function setDRMAuthenticationCredentials(userName: String, password: String, type: String): Void;
-	#end
+	//#end
 }

@@ -35,11 +35,8 @@ extern class ByteArray implements IDataInput, implements IDataOutput, implements
 	function writeUTFBytes(value : String) : Void;
 	function writeUnsignedInt(value : UInt) : Void;
 	static var defaultObjectEncoding : UInt;
-	#if air
+	//#if air
 	public function compress(algorithm: String): Void;
 	public function uncompress(algorithm: String): Void;
-	#else true
-	function compress() : Void;
-	function uncompress() : Void;
-	#end
+	//#end
 }

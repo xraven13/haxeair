@@ -5,7 +5,7 @@ extern class LoaderContext {
 	var applicationDomain : flash.system.ApplicationDomain;
 	var checkPolicyFile : Bool;
 	var securityDomain : flash.system.SecurityDomain;
-	#if air
+	//#if air
 	public var allowLoadBytesCodeExecution: Bool;
-	#end
+	//#end
 }

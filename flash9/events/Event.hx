@@ -41,7 +41,7 @@ extern class Event {
 	// player 9.0.28
 	static var ADDED_TO_STAGE : String;
 	static var REMOVED_FROM_STAGE : String;
-	#if air
+	//#if air
 	public static var CLOSING(default, null): String;
 	public static var DISPLAYING(default, null): String;
 	public static var EXITING(default, null): String;
@@ -52,5 +52,5 @@ extern class Event {
 	public static var NETWORK_CHANGE(default, null): String;
 	public static var USER_IDLE(default, null): String;
 	public static var USER_PRESENT(default, null): String;
-	#end
+	//#end
 }
