@@ -36,24 +36,29 @@ import flash.events.StatusEvent;
 class AirTest {
 	
 	static var defaultTest = 3;
+	
     static function main() {
 		var app = NativeApplication.nativeApplication;
 		app.addEventListener(InvokeEvent.INVOKE, function (e: InvokeEvent) {
 			var testNumber = (e.arguments.length > 0) ? Std.parseInt(e.arguments[0]) : defaultTest;
-			switch (testNumber) {
-				case 1: testClipboard();
-				case 2: testDir("TestDir", "TestFile.txt");
-				case 3: testWindows("http://comapping.com");
-				case 4: testEncryptedLocalStorage("Julia");
-				case 5: testDragNDropToApp();
-				case 6: testDragNDropFromApp("app:/test.gif");
-				case 7: testNetworkMonitoring("http://go.comapping.com");
-			}
+			runTest(testNumber);
 		});
 		app.setAsDefaultApplication("comap");
 		app.idleThreshold = 120;
 		app.addEventListener(Event.USER_IDLE, function (idleEvent: Event) { trace("Bye..."); });
 		app.addEventListener(Event.USER_PRESENT, function (presEvent: Event) { trace("Hi again!"); });
+	}
+	
+	static function runTest(testNumber: Int) {
+		switch (testNumber) {
+			case 1: testClipboard();
+			case 2: testDir("TestDir", "TestFile.txt");
+			case 3: testWindows("http://www.haxe.org/");
+			case 4: testEncryptedLocalStorage("AirTest");
+			case 5: testDragNDropToApp();
+			case 6: testDragNDropFromApp("app:/AirTest.gif");
+			case 7: testNetworkMonitoring("http://www.haxe.org/");
+		}		
 	}
 	
 	static function testNetworkMonitoring(url: String) {		
@@ -70,10 +75,44 @@ class AirTest {
 		trace("test windows");
 		var btn1 = makeBtn("Load content to new Window", callback(load, true, url));
 		var btn2 = makeBtn("Load content here", callback(load, false, url));
-		btn2.x = btn1.x + btn1.width + 20;
+		btn1.x = btn2.x = 350;
+		btn2.y = btn1.y + btn1.height + 20;
 						
 		flash.Lib.current.addChild(btn1);
-		flash.Lib.current.addChild(btn2);		
+		flash.Lib.current.addChild(btn2);	
+		
+		// add menu 
+		var root = new NativeMenu();
+		root.addEventListener(Event.SELECT, function (e: Event) {
+			var menuItem: NativeMenuItem = e.target;
+			switch(menuItem.label) {
+				case "test 1": runTest(1);
+				case "test 2": runTest(2);
+				case "test 3": runTest(3);
+				case "test 4": runTest(4);
+				case "test 5": runTest(5);
+				case "test 6": runTest(6);
+				case "test 7": runTest(7);
+				case "test 8": runTest(8);
+			}
+			trace(menuItem.label + " has been selected");
+		});
+		root.addItem(new NativeMenuItem("test 1"));
+		root.addItem(new NativeMenuItem("test 2"));
+		var test3 = new NativeMenuItem("test 3");
+		test3.enabled = false;
+		root.addItem(test3);
+		root.addItem(new NativeMenuItem("separator", true));
+		root.addItem(new NativeMenuItem("test 4"));
+		root.addItem(new NativeMenuItem("test 5"));
+		root.addItem(new NativeMenuItem("test 6"));
+		root.addItem(new NativeMenuItem("test 7"));
+		var submenu = new NativeMenu();
+		var subItem = new NativeMenuItem("subItem");
+		subItem.keyEquivalent = "s";
+		submenu.addItem(subItem);
+		root.addSubmenu(submenu, "submenu");
+		flash.Lib.current.stage.nativeWindow.menu = root;		
 	}
 	
 	static function testClipboard() {
@@ -207,23 +246,6 @@ class AirTest {
 		newWindow.title = title;
 		newWindow.width = width;
 		newWindow.height = height;
-		
-		// add menu 
-		var root = new NativeMenu();
-		root.addEventListener(Event.SELECT, function (e: Event) {
-			var menuItem: NativeMenuItem = e.target;
-			trace(menuItem.label + " has been selected");
-		});
-		root.addItem(new NativeMenuItem("menu 1"));
-		root.addItem(new NativeMenuItem("menu 2"));
-		root.addItem(new NativeMenuItem("menu 3", true));
-		root.addItem(new NativeMenuItem("menu 4"));
-		var submenu = new NativeMenu();
-		var subItem = new NativeMenuItem("subItem");
-		subItem.keyEquivalent = "s";
-		submenu.addItem(subItem);
-		root.addSubmenu(submenu, "submenu");
-		newWindow.menu = root;
 		
 		//add window events
 		newWindow.addEventListener(NativeWindowDisplayStateEvent.DISPLAY_STATE_CHANGE, 
