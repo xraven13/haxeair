@@ -13,7 +13,7 @@ extern class Security {
 	static function loadPolicyFile(url : String) : Void;
 	static var sandboxType(default,null) : String;
 	static function showSettings(?panel : String) : Void;
-	#if air
+	//#if air
 	public static var APPLICATION(default, null): String;
-	#end
+	//#end
 }

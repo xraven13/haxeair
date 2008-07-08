@@ -39,7 +39,7 @@ extern class MouseEvent extends flash.events.Event {
 	static var MOUSE_WHEEL : String;
 	static var ROLL_OUT : String;
 	static var ROLL_OVER : String;
-	#if air
+	//#if air
 	public var clickCount(default, null): Int;
 	public var commandKey(default, default): Bool;
 	public var controlKey(default, default): Bool;
@@ -50,5 +50,5 @@ extern class MouseEvent extends flash.events.Event {
 	public static var RIGHT_CLICK(default, null): String;
 	public static var RIGHT_MOUSE_DOWN(default, null): String;
 	public static var RIGHT_MOUSE_UP(default, null): String;
-	#end
+	//#end
 }
