@@ -1,0 +1,5 @@
+-swf AirTest.swf
+-swf-version 9
+-swf-lib ../servicemonitor.swf
+-main AirTest
+-lib air
