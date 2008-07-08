@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<application xmlns="http://ns.adobe.com/air/application/1.0">
+ <id>AirTest</id>
+ <version>1.0</version>
+ <filename>Comapping</filename>
+ <name>AirTest</name>
+ <description>AirTest</description>
+ <copyright>AirTest</copyright>
+ <initialWindow>
+   <title>AirTest</title>
+   <visible>true</visible>
+   <content>AirTest.swf</content>
+   <height>600</height>
+   <width>800</width>
+ </initialWindow>
+ <installFolder>AirTest</installFolder>
+ <programMenuFolder>AirTest</programMenuFolder>
+ <icon>
+ </icon>
+</application>
