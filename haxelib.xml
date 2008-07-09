@@ -1,7 +1,7 @@
 <project name="air" url="http://code.google.com/p/haxeair/" license="BSD">
 	<user name="air-owner"/>
 	<description>Extern classes for Adobe AIR</description>
-	<version name="1.0.1">
-		- AirTest example added
+	<version name="1.0.2">
+		- AirTest example improved
 	</version>
 </project>
