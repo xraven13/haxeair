@@ -3,11 +3,9 @@ package flash.events;
 import flash.display.InteractiveObject;
 
 extern class MouseEvent extends flash.events.Event {
-	#if air
+	//#if air
 	public function new(type: String, ?bubbles: Bool, ?cancelable: Bool, ?localX: Float, ?localY: Float, ?relatedObject: InteractiveObject, ?ctrlKey: Bool, ?altKey: Bool, ?shiftKey: Bool, ?buttonDown: Bool, ?delta: Int, ?commandKey: Bool, ?controlKey: Bool, ?clickCount: Int): Void;
-	#else true
-	public function new(type : String, ?bubbles : Bool, ?cancelable : Bool, ?localX : Float, ?localY : Float, ?relatedObject : InteractiveObject, ?ctrlKey : Bool, ?altKey : Bool, ?shiftKey : Bool, ?buttonDown : Bool, ?delta : Int) : Void;
-	#end
+	//#end
 	var altKey : Bool;
 	var buttonDown : Bool;
 	var ctrlKey : Bool;
@@ -19,16 +17,6 @@ extern class MouseEvent extends flash.events.Event {
 	var stageX(default,null) : Float;
 	var stageY(default,null) : Float;
 	function updateAfterEvent() : Void;
-	private function getStageX(localX : Float, localY : Float) : Float;
-	private function getStageY(localX : Float, localY : Float) : Float;
-	private var m_altKey : Bool;
-	private var m_buttonDown : Bool;
-	private var m_ctrlKey : Bool;
-	private var m_delta : Int;
-	private var m_localX : Float;
-	private var m_localY : Float;
-	private var m_relatedObject : flash.display.InteractiveObject;
-	private var m_shiftKey : Bool;
 	static var CLICK : String;
 	static var DOUBLE_CLICK : String;
 	static var MOUSE_DOWN : String;

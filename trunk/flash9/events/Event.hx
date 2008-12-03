@@ -1,20 +1,20 @@
 package flash.events;
 
 extern class Event {
-	function new(type : String, ?bubbles : Bool, ?cancelable : Bool) : Void;
 	var bubbles(default,null) : Bool;
 	var cancelable(default,null) : Bool;
-	function clone() : flash.events.Event;
 	var currentTarget(default,null) : Dynamic;
-	var eventPhase(default,null) : UInt;
+	var eventPhase(default,null) : EventPhase;
+	var target(default,null) : Dynamic;
+	var type(default,null) : String;
+	function new(type : String, ?bubbles : Bool, ?cancelable : Bool) : Void;
+	function clone() : Event;
 	function formatToString(className : String, ?p1 : Dynamic, ?p2 : Dynamic, ?p3 : Dynamic, ?p4 : Dynamic, ?p5 : Dynamic ) : String;
 	function isDefaultPrevented() : Bool;
 	function preventDefault() : Void;
 	function stopImmediatePropagation() : Void;
 	function stopPropagation() : Void;
-	var target(default,null) : Dynamic;
 	function toString() : String;
-	var type(default,null) : String;
 	static var ACTIVATE : String;
 	static var ADDED : String;
 	static var CANCEL : String;
@@ -41,6 +41,21 @@ extern class Event {
 	// player 9.0.28
 	static var ADDED_TO_STAGE : String;
 	static var REMOVED_FROM_STAGE : String;
+
+	/** added in FP 9.0.28 **/
+	static var FULLSCREEN : String;
+
+	#if flash10
+	static var FRAME_CONSTRUCTED : String;
+	static var SAMPLES_DATA : String;
+	static var EXIT_FRAME : String;
+	static var CUT : String;
+	static var COPY : String;
+	static var CLEAR : String;
+	static var SELECT_ALL : String;
+	static var PASTE : String;
+	#end
+
 	//#if air
 	public static var CLOSING(default, null): String;
 	public static var DISPLAYING(default, null): String;
