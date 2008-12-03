@@ -2,10 +2,7 @@ package flash.events;
 
 import flash.display.InteractiveObject;
 
-extern class MouseEvent extends flash.events.Event {
-	//#if air
-	public function new(type: String, ?bubbles: Bool, ?cancelable: Bool, ?localX: Float, ?localY: Float, ?relatedObject: InteractiveObject, ?ctrlKey: Bool, ?altKey: Bool, ?shiftKey: Bool, ?buttonDown: Bool, ?delta: Int, ?commandKey: Bool, ?controlKey: Bool, ?clickCount: Int): Void;
-	//#end
+extern class MouseEvent extends Event {
 	var altKey : Bool;
 	var buttonDown : Bool;
 	var ctrlKey : Bool;
@@ -16,6 +13,10 @@ extern class MouseEvent extends flash.events.Event {
 	var shiftKey : Bool;
 	var stageX(default,null) : Float;
 	var stageY(default,null) : Float;
+	//#if air
+	//public function new(type: String, ?bubbles: Bool, ?cancelable: Bool, ?localX: Float, ?localY: Float, ?relatedObject: InteractiveObject, ?ctrlKey: Bool, ?altKey: Bool, ?shiftKey: Bool, ?buttonDown: Bool, ?delta: Int, ?commandKey: Bool, ?controlKey: Bool, ?clickCount: Int): Void;	
+	public function new(type: String, ?bubbles: Bool, ?cancelable: Bool, ?localX: Float, ?localY: Float, ?relatedObject: InteractiveObject, ?ctrlKey: Bool, ?altKey: Bool, ?shiftKey: Bool, ?buttonDown: Bool, ?delta: Int, ?commandKey: Bool, ?controlKey: Bool, ?clickCount: Int): Void;	
+	//#end
 	function updateAfterEvent() : Void;
 	static var CLICK : String;
 	static var DOUBLE_CLICK : String;
