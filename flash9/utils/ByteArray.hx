@@ -1,15 +1,16 @@
 package flash.utils;
 
 extern class ByteArray implements IDataInput, implements IDataOutput, implements ArrayAccess<Int> {
-	function new() : Void;
 	var bytesAvailable(default,null) : UInt;
-	var endian : String;
+	var endian : Endian;
 	var length : UInt;
 	var objectEncoding : UInt;
 	var position : UInt;
+	function new() : Void;
+	function compress() : Void;
 	function readBoolean() : Bool;
 	function readByte() : Int;
-	function readBytes(bytes : flash.utils.ByteArray, ?offset : UInt, ?length : UInt) : Void;
+	function readBytes(bytes : ByteArray, ?offset : UInt, ?length : UInt) : Void;
 	function readDouble() : Float;
 	function readFloat() : Float;
 	function readInt() : Int;
@@ -24,7 +25,7 @@ extern class ByteArray implements IDataInput, implements IDataOutput, implements
 	function toString() : String;
 	function writeBoolean(value : Bool) : Void;
 	function writeByte(value : Int) : Void;
-	function writeBytes(bytes : flash.utils.ByteArray, ?offset : UInt, ?length : UInt) : Void;
+	function writeBytes(bytes : ByteArray, ?offset : UInt, ?length : UInt) : Void;
 	function writeDouble(value : Float) : Void;
 	function writeFloat(value : Float) : Void;
 	function writeInt(value : Int) : Void;
@@ -34,6 +35,13 @@ extern class ByteArray implements IDataInput, implements IDataOutput, implements
 	function writeUTF(value : String) : Void;
 	function writeUTFBytes(value : String) : Void;
 	function writeUnsignedInt(value : UInt) : Void;
+
+	#if flash10
+	function clear():Void;
+	function deflate():Void;
+	function inflate():Void;
+	#end
+
 	static var defaultObjectEncoding : UInt;
 	//#if air
 	public function compress(algorithm: String): Void;
