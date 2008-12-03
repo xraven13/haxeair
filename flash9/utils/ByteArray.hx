@@ -23,6 +23,7 @@ extern class ByteArray implements IDataInput, implements IDataOutput, implements
 	function readUnsignedInt() : UInt;
 	function readUnsignedShort() : UInt;
 	function toString() : String;
+	function uncompress() : Void;
 	function writeBoolean(value : Bool) : Void;
 	function writeByte(value : Int) : Void;
 	function writeBytes(bytes : ByteArray, ?offset : UInt, ?length : UInt) : Void;
