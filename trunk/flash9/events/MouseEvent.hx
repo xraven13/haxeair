@@ -12,7 +12,8 @@ extern class MouseEvent extends Event {
 	var stageX(default,null) : Float;
 	var stageY(default,null) : Float;
 	//#if air
-	public function new(type: String, ?bubbles: Bool, ?cancelable: Bool, ?localX: Float, ?localY: Float, ?relatedObject: flash.display.InteractiveObject, ?ctrlKey: Bool, ?altKey: Bool, ?shiftKey: Bool, ?buttonDown: Bool, ?delta: Int, ?commandKey: Bool, ?controlKey: Bool, ?clickCount: Int): Void;
+	function new(type : String, ?bubbles : Bool, ?cancelable : Bool, ?localX : Float, ?localY : Float, ?relatedObject : flash.display.InteractiveObject, ?ctrlKey : Bool, ?altKey : Bool, ?shiftKey : Bool, ?buttonDown : Bool, ?delta : Int, ?commandKey : Bool, ?controlKey : Bool, ?clickCount : Int) : Void;
+	//#else
 	//function new(type : String, ?bubbles : Bool, ?cancelable : Bool, ?localX : Float, ?localY : Float, ?relatedObject : flash.display.InteractiveObject, ?ctrlKey : Bool, ?altKey : Bool, ?shiftKey : Bool, ?buttonDown : Bool, ?delta : Int) : Void;
 	//#end
 	function updateAfterEvent() : Void;
