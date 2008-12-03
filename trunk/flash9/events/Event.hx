@@ -4,7 +4,7 @@ extern class Event {
 	var bubbles(default,null) : Bool;
 	var cancelable(default,null) : Bool;
 	var currentTarget(default,null) : Dynamic;
-	var eventPhase(default,null) : UInt;
+	var eventPhase(default,null) : EventPhase;
 	var target(default,null) : Dynamic;
 	var type(default,null) : String;
 	function new(type : String, ?bubbles : Bool, ?cancelable : Bool) : Void;
