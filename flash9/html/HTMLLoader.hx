@@ -6,7 +6,6 @@ extern class HTMLLoader extends flash.display.Sprite {
 	public var contentHeight(default, null): Float;
 	public var contentWidth(default, null): Float;	
 	public var hasFocusableContent(default, null): Bool;
-	public var height(default, default): Float;
 	public var historyLength(default, null): UInt;
 	public var historyPosition(default, default): UInt;
 	public var htmlHost(default, default): HTMLHost;
@@ -23,7 +22,6 @@ extern class HTMLLoader extends flash.display.Sprite {
 	public var textEncodingOverride(default, default): String;
 	public var useCache(default, default): Bool;
 	public var userAgent(default, default): String;
-	public var width(default, default): Float;
 	public var window(default, null): Dynamic;
 	
 	public function new(): Void;
