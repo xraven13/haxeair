@@ -1,7 +1,7 @@
 <project name="air" url="http://code.google.com/p/haxeair/" license="BSD">
 	<user name="air-owner"/>
 	<description>Extern classes for Adobe AIR</description>
-	<version name="1.0.3">
-		- Two fileds added to FileReference
+	<version name="2.0.0">
+		- haXe 2.0 compatible version of air lib
 	</version>
 </project>
