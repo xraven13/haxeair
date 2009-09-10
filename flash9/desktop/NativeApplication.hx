@@ -24,8 +24,8 @@ extern class NativeApplication extends flash.events.EventDispatcher {
 	public var timeSinceLastUserInput(default, null): Int;	
 
 	public function activate(?window: NativeWindow): Void;
-	public override function addEventListener(type: String, listener: Dynamic, ?useCapture: Bool, ?priority: Int, ?useWeakReference: Bool): Void;
-	public override function removeEventListener(type: String, listener: Dynamic, ?useCapture: Bool): Void;
+	public override function addEventListener(type: String, listener: Dynamic -> Void, ?useCapture: Bool = false, ?priority: Int = 0, ?useWeakReference: Bool = false): Void;
+	public override function removeEventListener(type: String, listener: Dynamic -> Void, ?useCapture: Bool = false): Void;
 	public function clear(): Bool;
 	public function selectAll(): Bool;
 	public function copy(): Bool;
