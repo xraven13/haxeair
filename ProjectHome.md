@@ -1,0 +1,1 @@
+This library is a bundle of extern classes for haXe. It allow you to create Adobe AIR applications with haxe.
